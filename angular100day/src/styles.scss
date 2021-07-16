@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --text-color:rgb(124, 24, 82);
+}
+.modal-open{
+    .modal-dialog{
+        margin-top: 133px;
+        max-width: 800px;
+        .modal-content{
+            .modal-header{
+                .modal-title{
+                    color: #78afac;
+                    text-transform: uppercase;
+                }
+            }
+
+        }
+    }
+}
+.modal-open{
+    .modal.show{
+        .dssssasas{
+            top: 50%;
+            transform: translate(0,-50%);
+            margin-top: 0;
+             max-width: 300px;
+           .modal-content{
+               text-align: center;
+           }
+        }
+    }
+}

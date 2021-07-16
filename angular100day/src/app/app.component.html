@@ -1,0 +1,113 @@
+
+<app-narbar></app-narbar>
+<div class="container-fluid no-padding" style="min-height: 80%;">
+  <!-- <button routerLink="employee">Employee</button>
+  <router-outlet></router-outlet> -->
+  <div class="row">
+    <app-show-dep></app-show-dep>
+  </div>
+</div>
+<app-footer></app-footer>
+<!-- <app-popup-show></app-popup-show> -->
+<!-- <div class="row"> -->
+  <!-- <div class="dayle">
+    <h1>Day1 Data type.- Data biding.</h1>          
+    {{name}}
+    <p>Start</p>
+    <p>{{user.name}}</p>
+    <p>{{user.age}}</p>
+    <input [type]="inputtile" [value]="user.age">          
+    <input type="text" [(ngModel)]="name">
+    <button type="button"  (click)="show()" >click</button>         
+  </div>
+  <div class="daychan">
+    <h1>Day 2 :Struct Directive</h1>
+    <app-hello *ngIf="user.age>=30; else noPG13" [name]="user.name"></app-hello>
+    <div *ngIf="user.age < 30">you iss younger to</div>
+    <ng-template #noPG13>
+      <div>
+        Bạn không thể xem nội dung PG-13
+      </div>
+    </ng-template>
+    <button (click)="user.age=user.age - 1">-</button>
+     Age:{{user.age}}
+    <button (click)="user.age=user.age + 1">+</button>
+  </div>
+  <div class="dayle">
+    <h1>ngFor Directive</h1>
+    <table >
+       <tr >
+        <th>ID</th>
+        <th>Phone</th>
+        <th>Name</th>
+       </tr>
+       <tr *ngFor="let u of users;first as isFir" [class.trhang]="!isFir">
+          <td>{{u.name}}</td>
+          <td>{{u.id}}</td>
+          <td>{{u.phone}}</td>
+       </tr>
+    </table>
+    <ul>
+      <li *ngFor="let us of users; index as idx; count as toal; first as isFirst; last as isLast;even as IsEven">
+        <span>{{us.name}}-{{us.id}}-{{us.phone}}</span>
+         <br>
+         <span>at index {{idx}}</span> of{{toal}}
+         <span *ngIf="isFirst"> I Fisst</span>
+         <span *ngIf="isLast"> I Last</span>
+         <span *ngIf="IsEven; else le">dòng chẵn</span>
+         <ng-template #le>
+          <div>
+            dong lẻ
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+  <div class="daychan">
+      <h1>Class & Style Binding</h1>
+      <h3>class binding:</h3>
+      <button (click)="isDanger=!isDanger">TToggle Dangerr</button>
+      <button (click)="isWarning=!isWarning">TToggle Warning</button>
+       <div class="box" [class.red-border]="isDanger" [class.blue-background]="isWarning"></div>
+    <!--
+      [class]="array"
+      <div class="box" [class]="['red-border','blue-background']"></div>
+    -->
+       <!--
+      [class]="object"{[tencclass:string]:boolean}
+      <div class="box" [class]="{'red-border':isDanger,'blue-background':isWarning}"></div>
+    -->
+    <!-- <h3>style Binding:</h3> -->
+    <!--
+      [style-ten-style]
+      [style.tenStyle.unit]
+      [style]="object"
+      [style.css-varial]
+    -->
+    <!-- <p [style.color]="'red'" [style.fontSize.px]="'20'">Start style Binding</p>
+    <p [style.--text-color]="isDanger? 'red':'blue'" [style]="{color:'var(--text-color)',backgroundColor:'blue', fontSize:'50px'}">Start style Binding</p> -->
+  <!-- </div>
+  <div class="dayle">
+    <h1>@input biding</h1>
+    <button (click)="incress()"> Incress</button>
+    <app-progress-bar></app-progress-bar>
+    <app-progress-bar [progress]="currentProgress" [progressColor]="'red'"> </app-progress-bar>
+  </div> -->
+  <!-- <div class="daychan">
+     <h1>@output biding</h1>
+      <app-author-list></app-author-list>
+  </div>
+  <div class="dayle">
+       <h1>Custom Two-way Data Binding</h1>
+       <app-hello name="{{name}}"></app-hello>
+       <input type="text" [(ngModel)]="name">
+       <toggle #toggleComp ([checked])="questions.questions1"></toggle>
+       <toggle #toggleComp ([checked])="questions.questions2"></toggle>
+
+       <br>
+       <button (click)="toggleComp.toggle()">Toggle me</button>
+   
+  </div> -->
+  
+<!-- </div> -->
+

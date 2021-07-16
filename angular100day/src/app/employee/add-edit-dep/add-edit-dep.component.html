@@ -1,0 +1,57 @@
+<div class="form-froup row">
+    <div class="row form-group" style="display: none;">
+        <div class="col-md-4"><p>ID</p></div>
+        <div class="col-md-8">
+            <input class="form-control" ([ngModel])="ID"  type="text" placeholder="ID"><br>
+              
+        </div>   
+     </div>
+     <div class="row form-group">
+         <div class="col-md-4 "><p>Name</p></div>
+         <div class="col-md-8">
+             <small style="color: red; font-size: 15px;">{{IpName}}</small>
+             <input  class="form-control"  [(ngModel)]="Name" type="text" placeholder="Name"><br>
+            
+        </div>
+      </div>
+      <div class="row form-group">
+         <div class="col-md-4"><p>Sex</p></div>
+         <div class="col-md-3">
+             <!-- <input   class="form-control"   type="number" placeholder="Sex"><br> -->
+             <small style="color: red; font-size: 15px;">{{IpSex}}</small>
+             <select class="form-control w140"   [(ngModel)]="Sex" ngDefaultControl >
+                    <option *ngFor="let valueGender of lstGender" [ngValue]="valueGender.code">
+                        {{valueGender.value}}
+                    </option>
+            </select><br>
+           
+        </div>
+      </div>
+      <div class="row form-group">
+         <div class="col-md-4"><p>Email</p></div>
+         <div class="col-md-8">
+            <small style="color: red; font-size: 15px;">{{IpGmail}}</small>
+             <input  class="form-control" [(ngModel)]="Gmail" type="text" placeholder="Email"><br>
+            
+        </div>
+      </div>
+      <div class="row form-group">
+         <div class="col-md-4"><p>Adress</p></div>
+         <div class="col-md-8">
+            <small style="color: red; font-size: 15px;">{{IpAdress}}</small>
+             <input  class="form-control" [(ngModel)]="Adresss" type="text" placeholder="Adress"><br>
+            
+        </div>
+      </div>
+      <div class="row form-group">
+         <div class="col-md-4"><p>Tell</p></div>
+         <div class="col-md-8">
+            <small style="color: red; font-size: 15px;">{{IPtell}}</small>
+             <input id="inputTell" class="form-control"  [(ngModel)]="Tell" type="text" placeholder="Tell"><br>
+        
+        </div>
+         
+      </div>
+</div>
+<button (click)="addEmployees()" *ngIf="em.Id==0" class="btn btn-primary">Add</button>
+<button (click)="UpEmployees()" *ngIf="em.Id!=0" class="btn btn-primary">Update</button>

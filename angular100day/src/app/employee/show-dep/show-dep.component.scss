@@ -1,0 +1,64 @@
+.container-fluid {
+    .content{
+        .table-Employee{
+            margin-top: 10px;
+            margin-bottom:10px;
+            border: 1px solid;
+            width: 100%;
+            text-align: center;
+            
+            .tr-th{
+              background-color: #1a93f1;
+              color: #fffdfb;
+              line-height: 2;
+              .input-group{
+                  width: 60%;
+                  float:right;
+                  background-color: white;
+                  .form-control{
+                      border: none;    
+                      box-shadow: none;
+                      outline: none;                 
+                  }
+                  i{
+                    line-height: 2;
+                    color: #1b1b1b;
+                    width: 58px;
+                  }
+
+              }
+            }
+            tr{
+                border: 1px solid #e0d3d3;
+                height: 50px;
+                border-radius: 5px;
+                td{
+                    .btn{
+                        margin-right: 20px;
+                    }
+                    .fa-plus{
+                        margin-right: 10px;
+                    }
+                    .fa-pencil{
+                        margin-right: 10px;
+                    }
+                    .fa-trash-alt{
+                        margin-right: 10px;
+                    }
+                    i{
+                        margin-left: 15px;
+                    }
+                    i:hover{
+                        font-size: 25px;
+                    }
+                }
+              }
+              .tr-content:hover{
+                  background-color: #e0e0e0;
+                  border-right: 5px solid red;
+                  border-left: 5px solid red;
+              }
+        }
+    }  
+  }
+  

@@ -1,0 +1,84 @@
+<div class="container-fluid">
+    <div class="row">
+            <!-- Button trigger modal -->            
+         <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                 <div class="modal-dialog">
+                         <div class="modal-content">
+                             <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">{{Modaltitle}}</h5>
+                                 <button id="btn-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="" (click)="Closeclick()"></button>
+                             </div>
+                             <div class="modal-body">
+                                <app-add-edit-dep [em]="em" *ngIf="activeAddEditEm"></app-add-edit-dep>
+                              </div>             
+                         </div>
+                 </div>
+            </div>
+    </div>
+    <div class="row content">
+        <table class="table table-striped table-Employee">
+            <thead>
+                <tr class="tr-th">
+                    <th>Sex{{ad}}</th>
+                    <th>Name</th>
+                    <th>Adress</th>
+                    <th>Gamil</th>
+                    <th>Tell</th> 
+                    <th style="width: 400px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" [(ngModel)]="filterString" (ngModelChange)="onFilterChange()">
+                            <i class="fal fa-search "></i>       
+                          </div>
+                       </th>                                      
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="tr-content" *ngFor="let ems of EmployeeListfilter | paginate: { itemsPerPage:12, currentPage: page, totalItems:totalLengh }">    
+                     <td>               
+                         <div *ngIf="ems.Sex =='0' ">
+                           <div>an</div>
+                           <div>an</div>
+                         </div>
+                         <span *ngIf="ems.Sex =='2' ">
+                            Namaa
+                         </span>
+                         <ng-container *ngIf="ems.Sex =='1' ">
+                            <div>am</div>
+                            <div>am</div>
+                            <div>am</div>
+                         </ng-container>
+                     </td>
+                     <td>
+                         {{ems.Name | uppercase}}
+                     </td>
+                     <td>
+                         {{ems.Adresss | uppercase}}
+                     </td>
+                     <td>
+                         {{ems.Gmail}}
+                     </td>
+                     <td>
+                         {{ems.Tell}}
+                     </td>
+                     <td>
+                        <i class="fas fa-plus" style="color: #1f7aea;" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false"></i>
+                        <i class="far fa-pencil" style="color: #096b4a" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateClick(ems)"  data-backdrop="static" data-keyboard="false"></i>
+                        <i class="fal fa-trash-alt" style="color: red;"(click)="DeleteClick(ems)"></i>
+                        <!-- <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addClick()" data-backdrop="static" data-keyboard="false">
+                            <i class="fas fa-plus"></i>Add
+                        </button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="updateClick(ems)"  data-backdrop="static" data-keyboard="false" ><i class="far fa-pencil"></i>Update</button>
+                        <button type="button" class="btn btn-danger" (click)="DeleteClick(ems)"  ><i class="fal fa-trash-alt"></i>Delete</button>
+                     -->
+                    </td> 
+                </tr>
+            </tbody>
+      </table>
+    </div>
+    <div style="float:right">
+        <pagination-controls (pageChange)="page =$event"></pagination-controls>
+    </div>
+</div>
+<app-popup-show style="display: none;"></app-popup-show>
+

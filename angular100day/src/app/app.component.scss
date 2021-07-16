@@ -1,0 +1,41 @@
+.container-fluid {
+  .row{
+      .dayle{
+          background-color: azure;
+          table{
+              background-color: rgb(153, 145, 173);
+              width: 100%;
+              border: 1px solid;             
+              tr{
+                  height: 30px;
+                  border: 1px;
+                  border: 1px solid;
+                  td{
+                    border: 1px solid;
+                      width: 34%;
+                  }
+              }
+              .trhang:hover{
+                  background-color: cornsilk;
+              }
+          }
+      }
+      .daychan{
+          background-color: #e0edf1;
+          .box{
+              width: 100px;
+              height: 100px;
+              padding: 20px 40px;
+              margin: 10px;
+              border: 2px solid black;
+
+            }
+            .red-border{
+                border: 2px solid red;
+            }
+            .blue-background{
+                background-color: blue;
+            }
+      }
+  }
+}

@@ -1,0 +1,18 @@
+<ng-template #mymodal let-modal style="width:250px;">
+    <div class=" modal-header" style="display: none;">
+       <h4 class="modal-title" id="modal-basic-title"></h4>
+       <button type="button" id="btnclose" class="btn btn-danger" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            ×
+       </button>
+  </div>
+  <div class="row modal-body" style="border-radius: 50%;">
+      <img src="assets/image/sussces.png">
+      <span style="
+      color: #2684d8;
+      font-weight: 600;
+      font-size: 19px;
+      margin-top: 20px;">
+      SUSSCES</span>  
+</div>
+</ng-template> 
+<button type="button" id="showpopupaccsess" class="btn btn-primary"(click)="open(mymodal)">show pupup</button>
