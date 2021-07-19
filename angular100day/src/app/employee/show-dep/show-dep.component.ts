@@ -38,11 +38,11 @@ export class ShowDepComponent implements OnInit {
   filterString = "";
   
   onFilterChange() {
-    debugger;
+
     this.EmployeeListfilter = this.EmployeeList.filter((emp) => this.isMatch(emp));
   }
   isMatch(item: any): any {
-    debugger;
+
    
     if (item instanceof Object) {
       return Object.keys(item).some((k) => this.isMatch(item[k]));
@@ -52,7 +52,7 @@ export class ShowDepComponent implements OnInit {
   }  
   ////////Adđ
   addClick() {
-    debugger;
+
     this.em = {
       Id: 0,
       Sex: 0,
@@ -67,7 +67,7 @@ export class ShowDepComponent implements OnInit {
   }
   ///close
   Closeclick() {
-    debugger;
+
     this.activeAddEditEm = false;
   }
   closePopup()
@@ -76,7 +76,7 @@ export class ShowDepComponent implements OnInit {
   }
   ////update
   updateClick(item: any) {
-    debugger;
+
     this.em = item;
     this.Modaltitle = "Update  Employee";
     this.activeAddEditEm = true;
@@ -85,7 +85,7 @@ export class ShowDepComponent implements OnInit {
   ///delete
   DeleteClick(item: any) {
     if (confirm('Bạn có chắc chắn không?')) {
-      debugger;
+
       this.service.deleteEmployee(item.ID).subscribe(data => {
         this.refreshEmList();
         setTimeout(() => {
@@ -101,12 +101,12 @@ export class ShowDepComponent implements OnInit {
   ////////getdata
   refreshEmList() {
     this.service.getEmList().subscribe(data => {
-      debugger;
+
       this.totalLengh=data.length;
       this.EmployeeList = data;
       this.EmployeeListfilter = data;    
     }, err => {
-      debugger;
+
     });
   }
   ///combox

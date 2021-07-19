@@ -10,7 +10,7 @@ import { ShowDepComponent } from '../show-dep/show-dep.component'
 })
 export class AddEditDepComponent implements OnInit {
   @Input() em: any;
-  @Output() closePopup = new EventEmitter<Function>();
+  @Output() closePopup = new EventEmitter();
   ID?: number;
   Sex?: number;
   Name: string;
@@ -55,7 +55,7 @@ export class AddEditDepComponent implements OnInit {
       this.checkEmailtt=false;
   }
   ngOnInit(): void {
-    debugger;
+
     this.ID = this.em.ID;
     this.Sex = this.em.Sex;
     this.Name = this.em.Name;
@@ -70,16 +70,16 @@ export class AddEditDepComponent implements OnInit {
  
   getGmailList() {
     this.service.getAllEmail().subscribe(data => {
-      debugger;
+
       this.GmailList = data; 
     }, err => {
-      debugger;
+
     });
   }
   ///funcition getEmail tồn tại
 
   checkEmail(){
-    debugger;   
+ 
     for(var i=0; i++; i<this.GmailList.length)
     {
        if(this.GmailList[i]==this.Gmail)
@@ -91,7 +91,7 @@ export class AddEditDepComponent implements OnInit {
   }
   ///function add
   addEmployees() {
-    debugger;
+
     var val = {
       ID: this.ID,
       Sex: this.Sex,
@@ -170,7 +170,6 @@ export class AddEditDepComponent implements OnInit {
           this.service.closePupupAccsess();
         },1000)
       }, error => {
-        debugger
         console.log(error);
         if(error.error.text="001")
         {
@@ -182,7 +181,7 @@ export class AddEditDepComponent implements OnInit {
   }
   ///function Update
   UpEmployees() {
-    debugger;
+
     var val = {
       ID: this.ID,
       Sex: this.Sex,
@@ -251,7 +250,7 @@ export class AddEditDepComponent implements OnInit {
       this.service.updateEmployee(val).subscribe(res => {
         this.show.refreshEmList();
         this.show.closePopup();
-        debugger;
+
         setTimeout(() => {
           this.service.showPupUpAsess();
         },500);
@@ -259,7 +258,7 @@ export class AddEditDepComponent implements OnInit {
           this.service.closePupupAccsess();
         },2000)
       },error => {
-        debugger
+
         console.log(error);
         if(error.error.text="001")
         {

@@ -13,11 +13,11 @@ export class SharedService {
   
   }
   getEmList(): Observable<any[]> {
-    debugger;
+
     return this.http.get<any>(this.APIUrl + "/Employee");
   }
   getAllEmail(): Observable<any[]> {
-    debugger;
+
     return this.http.get<any>(this.APIUrl + "/Employee/GetAllEmail");
   }
   addEmployee(val: any) {
@@ -27,7 +27,7 @@ export class SharedService {
     return this.http.post<any>(this.APIUrl + '/Employee/UpdateEmployee', val);
   }
   deleteEmployee(val: any) {
-    debugger;
+
     return this.http.post<any>(this.APIUrl + '/Employee/DeleteEMployee/', val);
   }
   showPupUpAsess(){
@@ -36,5 +36,4 @@ export class SharedService {
   closePupupAccsess(){
     $("#btnclose").click();
   }
-
 }

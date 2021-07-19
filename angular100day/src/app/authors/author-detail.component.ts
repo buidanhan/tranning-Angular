@@ -14,6 +14,7 @@ export class AuthorDetailComponent {
   @Input() author: Author;
   @Output() select= new EventEmitter<Author>();
   @Output() deleteAuthor=new EventEmitter<Author>();
+
   constructor() {
     this.author = {
       id: 1,

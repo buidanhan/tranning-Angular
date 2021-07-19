@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter, TemplateRef } from '@angular/c
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl,Form, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/shared.service';
+
 declare var $ :any;
 @Component({
   selector: 'app-popup-show',
@@ -15,7 +16,6 @@ export class PopupShowComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger
   }
   showPupUpAsess(){
     $("#showpopupaccsess").click();
